@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jieqi Yan — Projects</title>
+  <meta name="description" content="Interactive To Do List by Jieqi Yan — add tasks to calendar dates, check them off, and keep track of what's next." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand"><span class="brand-dot"></span> Jieqi Yan</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">Interactive demo</span>
+        <h1>Projects</h1>
+        <p>A little live tool — pick a date, plan your tasks, and check them off when they're done.</p>
+      </div>
+    </section>
+
+    <!-- ===== To-Do mini app ===== -->
+    <section class="section" style="padding-top:48px;">
+      <div class="container">
+        <div class="todo-app card">
+          <div class="todo-head">
+            <div>
+              <span class="eyebrow">Try it live</span>
+              <h2>To Do List</h2>
+              <p>Pick a date on the calendar, jot down a task, and check it off when it's done. Your list is saved in this browser.</p>
+            </div>
+            <span class="todo-count" id="todoCount">No tasks yet</span>
+          </div>
+
+          <form class="todo-form" id="todoForm">
+            <input type="text" id="todoInput" name="todo" placeholder="What needs doing?" maxlength="120" autocomplete="off" required />
+            <input type="date" id="todoDate" name="date" aria-label="Due date" required />
+            <button type="submit" class="btn">Add</button>
+
+            <div class="todo-extras">
+              <div class="todo-picker">
+                <span class="picker-label">Icon</span>
+                <div class="emoji-row" id="todoEmojis" role="radiogroup" aria-label="Task icon">
+                  <button type="button" class="emoji-opt is-active" data-emoji="📝" role="radio" aria-checked="true" title="Memo">📝</button>
+                  <button type="button" class="emoji-opt" data-emoji="📚" role="radio" aria-checked="false" title="Study">📚</button>
+                  <button type="button" class="emoji-opt" data-emoji="🎯" role="radio" aria-checked="false" title="Goal">🎯</button>
+                  <button type="button" class="emoji-opt" data-emoji="💼" role="radio" aria-checked="false" title="Work">💼</button>
+                  <button type="button" class="emoji-opt" data-emoji="🏃" role="radio" aria-checked="false" title="Exercise">🏃</button>
+                  <button type="button" class="emoji-opt" data-emoji="🎵" role="radio" aria-checked="false" title="Music">🎵</button>
+                  <button type="button" class="emoji-opt" data-emoji="✈️" role="radio" aria-checked="false" title="Travel">✈️</button>
+                  <button type="button" class="emoji-opt" data-emoji="🧠" role="radio" aria-checked="false" title="Thinking">🧠</button>
+                </div>
+              </div>
+
+              <div class="todo-picker">
+                <span class="picker-label">Priority</span>
+                <div class="priority-row" id="todoPriority" role="radiogroup" aria-label="Priority level">
+                  <button type="button" class="prio-opt" data-priority="low" role="radio" aria-checked="false">Low</button>
+                  <button type="button" class="prio-opt is-active" data-priority="medium" role="radio" aria-checked="true">Medium</button>
+                  <button type="button" class="prio-opt" data-priority="high" role="radio" aria-checked="false">High</button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <ul class="todo-list" id="todoList"></ul>
+          <div class="todo-empty" id="todoEmpty">No tasks yet — add your first one above. ✨</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-fun">
+        <span class="label">Fun fact about me</span>
+        <p>Half of my side projects never ship — they're just excuses to learn a new font and pick a new color palette.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Jieqi Yan · Made with warmth, tea, and a lot of rounded corners.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
