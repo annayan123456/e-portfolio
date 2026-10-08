@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jieqi Yan — Projects</title>
+  <meta name="description" content="Selected projects by Jieqi Yan — warm, human-friendly web products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand"><span class="brand-dot"></span> Jieqi Yan</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">Hands-on little tool</span>
+        <h1>To-Do List</h1>
+        <p>Pick a date on the calendar, jot down a task, and press Add. Check things off as you go — that strikethrough feels good.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:48px;">
+      <div class="container container-narrow">
+        <div class="todo-app">
+
+          <div class="todo-status" id="todoStatus" role="status" hidden></div>
+
+          <form class="todo-form" id="todoForm" autocomplete="off">
+            <div class="todo-field-grow">
+              <label class="todo-label" for="todoInput">Task</label>
+              <input
+                type="text"
+                id="todoInput"
+                class="todo-input"
+                placeholder="What needs doing?"
+                maxlength="140"
+              />
+            </div>
+
+            <div class="todo-calendar-wrap" id="todoCalendarWrap">
+              <span class="todo-label" id="dateFieldLabel">Date</span>
+              <button type="button" id="dateBtn" class="date-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="calendarPop">
+                <span aria-hidden="true">🗓️</span>
+                <span id="dateBtnText">Today</span>
+              </button>
+
+              <div class="calendar-pop" id="calendarPop" role="dialog" aria-labelledby="dateFieldLabel" hidden>
+                <div class="cal-header">
+                  <button type="button" class="cal-nav" id="calPrev" aria-label="Previous month">&#8249;</button>
+                  <span class="cal-title" id="calTitle"></span>
+                  <button type="button" class="cal-nav" id="calNext" aria-label="Next month">&#8250;</button>
+                </div>
+                <div class="cal-weekdays" aria-hidden="true">
+                  <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+                <div class="cal-days" id="calDays"></div>
+              </div>
+            </div>
+
+            <div class="todo-pick-wrap" id="todoPickWrap">
+              <span class="todo-label" id="markFieldLabel">Mark</span>
+              <button type="button" id="pickBtn" class="date-btn pick-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="pickPop">
+                <span id="pickBtnIcon" aria-hidden="true">&#128993;</span>
+                <span id="pickBtnText">Medium</span>
+              </button>
+
+              <div class="pick-pop" id="pickPop" role="dialog" aria-labelledby="markFieldLabel" hidden>
+                <p class="pick-section-label">Priority</p>
+                <div class="pick-row">
+                  <button type="button" class="pick-chip" data-mark="priority" data-value="low">&#128994; Low</button>
+                  <button type="button" class="pick-chip is-selected" data-mark="priority" data-value="medium">&#128993; Medium</button>
+                  <button type="button" class="pick-chip" data-mark="priority" data-value="high">&#128308; High</button>
+                </div>
+                <p class="pick-section-label">Or pick an emoji</p>
+                <div class="pick-row pick-emojis">
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#128204;">&#128204;</button>
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#128722;">&#128722;</button>
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#128222;">&#128222;</button>
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#128161;">&#128161;</button>
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#127939;">&#127939;</button>
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#128218;">&#128218;</button>
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#9992;&#65039;">&#9992;&#65039;</button>
+                  <button type="button" class="pick-chip" data-mark="emoji" data-value="&#127881;">&#127881;</button>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn todo-add">Add</button>
+          </form>
+
+          <ul class="todo-list" id="todoList" aria-label="Tasks"></ul>
+          <p class="todo-empty" id="todoEmpty" hidden>&#10024; Nothing planned yet — add your first task above.</p>
+          <p class="todo-empty" id="todoLoading">&#9203; Loading your tasks…</p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-fun">
+        <span class="label">Fun fact about me</span>
+        <p>Half of my side projects never ship — they're just excuses to learn a new font and pick a new color palette.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Jieqi Yan · Made with warmth, tea, and a lot of rounded corners.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
